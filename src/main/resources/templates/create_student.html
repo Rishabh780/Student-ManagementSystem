@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Student Management System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/
+bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+ crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Student Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:herf="@{/students}">Student Management</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+	<div class  = "container">
+		<div class = "row">
+		<div class = " col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+		<h1 class =" text-center">Create New Student </h1>
+		<div class = "card-body">
+		<form th:action="@{/student}" th:object ="${student}" method="post">
+			<div class ="form-group">
+				<lable>Student First Name</lable>
+				<input
+					type="text"
+					name="firstName"
+					th:field="*{firstName}"
+					class="form-control "
+					placeholder="Enter Student First Name"
+				/>
+			</div>
+				<div class ="form-group">
+				<lable>Student Last Name</lable>
+				<input
+					type="text"
+					name="firstName"
+					th:field="*{lastName}"
+					class="form-control "
+					placeholder="Enter Student Last Name"
+				/>
+				</div>
+				<div class ="form-group">
+				<lable>Student email</lable>
+				<input
+					type="text"
+					name="email"
+					th:field="*{email}"
+					class="form-control "
+					placeholder="Enter Student Email"
+					/>
+				</div>
+				<div class ="footer-body">
+				<button type="submit" class="btn btn-primary">
+						Submit			
+					</button>
+			</form>
+</body>
+</html>
